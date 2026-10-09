@@ -42,14 +42,24 @@ nav a{color:#fff;text-decoration:none;font-weight:500;font-size:14px}nav a:hover
 .hero h1{font-size:clamp(2.2rem,6vw,4.4rem);max-width:15ch}
 .hero p{font-size:1.15rem;max-width:46ch}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
 /* about */
-.about-copy{max-width:900px}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.about-photo{width:100%;height:auto;object-fit:contain}
 .facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px solid var(--gold);margin-top:26px}
 .facts div{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}.facts b{display:block}
 .quote{background:var(--ink);color:#fff;padding:64px 0}.quote p{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;max-width:30ch;margin:0}.quote em{font-style:normal;color:var(--gold)}
 /* services */
+#catering{position:relative;isolation:isolate;color:#fff;background:#111214}
+#catering:before,#catering:after{position:absolute;inset:0;content:"";z-index:-1}
+#catering:before{background:url("assets/images/food/chafing-dishes-garden-table.jpg") center 45%/cover}
+#catering:after{background:linear-gradient(90deg,#000d,#0009 72%,#0007)}
+#catering .catering-intro{display:flex;min-height:220px;flex-direction:column;justify-content:center;padding:0 0 34px}
+#catering .catering-intro h2{max-width:20ch}
+#catering .catering-intro .lead{margin:0;color:#fff;max-width:60ch}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px;margin-top:40px}
-.sv{border-top:2px solid var(--gold);padding-top:16px}.sv p{color:var(--mute);margin:0 0 8px;font-size:15px}
-.sv a{font-weight:700;font-size:14px}
+#catering .sg{margin-top:0}
+#catering .sv{border-top:2px solid var(--gold);padding-top:16px}
+#catering .sv p{color:#f0f0f0;margin:0 0 8px;font-size:15px}
+#catering .sv a{color:var(--gold);font-weight:700;font-size:14px}
 /* video */
 .story-video{background:#edf0e9}
 .story-video .w{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
@@ -91,7 +101,7 @@ footer{background:var(--ink);color:#c9ccd0;padding:56px 0 28px;font-size:14px}
 footer .fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}footer .brand{margin-bottom:14px}footer .brand-art{width:220px;height:auto}
 footer a{display:block;text-decoration:none;padding:3px 0}footer h3{color:#fff;font-size:14px}.cp{border-top:1px solid #ffffff22;margin-top:36px;padding-top:18px}
 @media(max-width:900px){nav{position:absolute;inset:72px 0 auto;background:#111214ed;display:none;padding:10px 20px 20px}nav.o{display:block}nav ul{flex-direction:column;gap:14px}#mb{display:block}
-.cg,.dir,.story-video .w{grid-template-columns:1fr}.sg,.why,.steps,.pk,.pl{grid-template-columns:1fr 1fr}.gal{columns:2}.logos{grid-template-columns:1fr 1fr}.logos div{border-bottom:1px solid var(--line)}footer .fg{grid-template-columns:1fr}.dir .ph{max-width:280px}section{padding:64px 0}}
+.about-grid,.cg,.dir,.story-video .w{grid-template-columns:1fr}.about-photo{max-width:600px}.sg,.why,.steps,.pk,.pl{grid-template-columns:1fr 1fr}.gal{columns:2}.logos{grid-template-columns:1fr 1fr}.logos div{border-bottom:1px solid var(--line)}footer .fg{grid-template-columns:1fr}.dir .ph{max-width:280px}section{padding:64px 0}}
 @media(max-width:560px){.w{width:min(100% - 32px,1160px)}.sg,.why,.steps,.pk,.pl,form{grid-template-columns:1fr}.gal{columns:2;column-gap:8px}.gal button{margin-bottom:8px}.hero{min-height:88svh;padding:120px 0 56px}.hero h1{font-size:clamp(2rem,11vw,3rem)}.cta .btn{width:100%;text-align:center}.brand-art{width:112px;height:62px}.facts{grid-template-columns:1fr 1fr}.logos div{padding:20px 14px;min-height:120px}.cg{gap:32px}.story-video .w{gap:24px}.story-video video{width:min(100%,300px)}}
 @media(prefers-reduced-motion:no-preference){.has-js [data-reveal]{opacity:0;transform:perspective(900px) translateY(26px) rotateX(4deg);transform-origin:center bottom;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.has-js [data-reveal].is-visible{opacity:1;transform:perspective(900px) translateY(0) rotateX(0)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -106,13 +116,13 @@ footer a{display:block;text-decoration:none;padding:3px 0}footer h3{color:#fff;f
 <h1>Exceptional Catering. Memorable Experiences.</h1><p>Thoughtfully prepared food, beautiful presentation and professional catering for every occasion.</p>
 <div class="cta"><a class="btn" href="#catering">Explore Our Catering</a><a class="btn o" href="#contact">Enquire About Your Event</a></div></div></section>
 
-<section class="about" id="about"><div class="w"><div class="about-copy"><h2>About Dine with Rika</h2>
+<section class="about" id="about"><div class="w about-grid"><div class="about-copy"><h2>About Dine with Rika</h2>
 <p class="lead">Dine with Rika is a catering company dedicated to providing clients with exquisite, delicious and memorable food experiences. Founded in 2017 from a passion for food and a desire to create catering experiences that bring people together.</p>
 <p class="lead">We work closely with our clients to create menus that complement the occasion, theme, guest profile and desired atmosphere. Our focus is on quality food, beautiful presentation, professional preparation and exceptional service.</p>
-<div class="facts"><div><b>Trading as</b>KU CHIVIRIKA HI MAVOKO (PTY) LTD</div><div><b>Ownership</b>100% black-owned and managed</div><div><b>Registered</b>2021, with roots dating back to 2018</div><div><b>Registration no.</b>2021/796719/07</div><div><b>B-BBEE</b>Level 1</div><div><b>CSD number</b>MAAA1119434</div></div></div></div></section>
+<div class="facts"><div><b>Trading as</b>KU CHIVIRIKA HI MAVOKO (PTY) LTD</div><div><b>Ownership</b>100% black-owned and managed</div><div><b>Registered</b>2021, with roots dating back to 2018</div><div><b>Registration no.</b>2021/796719/07</div><div><b>B-BBEE</b>Level 1</div><div><b>CSD number</b>MAAA1119434</div></div></div><img class="about-photo" loading="lazy" src="assets/images/food/cocktail-tower.jpg" alt="A tower of colourful cocktails prepared for a Dine with Rika event" width="900" height="825"></div></section>
 <div class="quote"><div class="w"><p>Your occasion deserves food that is <em>as memorable as the moment itself.</em></p></div></div>
 
-<section id="catering"><div class="w"><h2>Catering for every kind of occasion</h2><p class="lead">Full-service catering designed around the specific requirements of each event, from menu development to professional food preparation and presentation.</p>
+<section id="catering"><div class="w"><div class="catering-intro"><h2>Catering for every kind of occasion</h2><p class="lead">Full-service catering designed around the specific requirements of each event, from menu development to professional food preparation and presentation.</p></div>
 <div class="sg" id="sv"></div></div></section>
 
 <section class="story-video" id="video"><div class="w"><div><h2>Take a look behind the scenes</h2><p class="lead">Get a closer look at Dine with Rika and the experiences we create for our guests.</p><a class="btn" href="#gallery">Explore the photo gallery</a></div><video controls playsinline preload="metadata" aria-label="Dine with Rika catering video"><source src="assets/video/dine-with-rika.mp4" type="video/mp4">Your browser does not support the video element. Please use a modern browser to watch this video.</video></div></section>
@@ -167,10 +177,10 @@ const cats={"Starters & Canapés":["Beautifully presented starters and bite-size
 "Main Courses":["Hearty, flavour-focused dishes prepared according to the client's preferred menu.",[["evening-buffet.jpg","Evening buffet with chafing dishes"],["chafing-dishes-garden-table.jpg","Gold chafing dishes on a garden table"]]],
 "Grilled & Braai-Style Food":["Grilled meats, chicken and skewers for relaxed celebrations and traditional occasions.",[["mixed-platters.jpg","Platters of grilled meats, samosas and fries"]]],
 "Salads & Sides":["Fresh and colourful salads and side dishes to complement the main meal.",[["buffet-salads-florals.jpg","Layered salad and side dishes with florals"]]],
-"Desserts":["Sweet selections for the perfect ending to the dining experience.",[["chocolate-dessert.jpg","Chocolate dessert with berries and meringue"],["yoghurt-granola-cups.jpg","Yoghurt and granola cups with berries"],[G+"dessert-display.jpeg","Dessert display with individual cakes and treats"]]],
+"Desserts":["Sweet selections for the perfect ending to the dining experience.",[["yoghurt-granola-cups.jpg","Yoghurt and granola cups with berries"]]],
 "Fruit & Platters":["Fresh fruit and platter-style selections for sharing, functions and receptions.",[["fruit-platter.jpg","Fruit platter with watermelon, berries and citrus"]]],
 "Bar & Drinks":["Drinks service styled to match the event.",[["dine-with-rika-bar.jpg","The Dine with Rika bar"],["cocktail-tower.jpg","Cocktail coupes with edible flowers"]]],
-"Our Team":["Meet the people behind our catering and service.",[[G+"team-at-work.jpeg","Two Dine with Rika team members at work"],[G+"team-buffet.jpeg","Dine with Rika team serving at an outdoor buffet"],[T+"team-group-deck.jpg","The Dine with Rika team gathered on a wooden deck"],[T+"team-aprons.jpg","Two team members in Dine with Rika uniforms and green aprons"],[T+"team-trio-buffet.jpg","Team members behind a styled buffet"]]]};
+"Our Team":["Meet the people behind our catering and service.",[[T+"team-group-deck.jpg","The Dine with Rika team gathered on a wooden deck"],[T+"team-aprons.jpg","Two team members in Dine with Rika uniforms and green aprons"]]]};
 const packages=[["Corporate Tea Break","R150 pp",["Assorted mini muffins","Fresh scones","Assorted savoury pastries","Tea & coffee","Assorted juices"]],
 ["Executive Breakfast","R175 pp",["Fresh muffins","Scones with accompaniments","Assorted sandwiches","Assorted savoury pastries","Seasonal fruit","Yoghurt & muesli cups","Tea & coffee","Juice"]],
 ["Corporate Lunch Buffet","R220 pp",["Choose 2 proteins","Choose 2 starch","Dessert: individual dessert cups","Drinks: juice & water"]],
@@ -200,7 +210,7 @@ $("#gal").onclick=e=>{const b=e.target.closest("button");if(!b)return;li.src=b.d
 lb.onclick=e=>{if(e.target===lb||e.target.id==="lc")lb.classList.remove("o")};addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("o")});
 document.addEventListener("click",e=>{const a=e.target.closest("[data-t]");if(a){const o=[...$("#t").options].find(x=>a.dataset.t.startsWith(x.text.split(" ")[0]));if(o)$("#t").value=o.text}});
 /* subtle scroll reveals with a perspective lift */
-const revealTargets=document.querySelectorAll(".about-copy,.quote .w,#catering h2,#catering .lead,.sv,#video .w,#gallery h2,#gallery .lead,.gal button,.pk>div,.pl p,#clients h2,#clients .lead,.logos div,.dir,#why h2,.why>div,.steps li,#contact .cg>div");
+const revealTargets=document.querySelectorAll(".about-grid,.quote .w,#catering h2,#catering .lead,.sv,#video .w,#gallery h2,#gallery .lead,.gal button,.pk>div,.pl p,#clients h2,#clients .lead,.logos div,.dir,#why h2,.why>div,.steps li,#contact .cg>div");
 if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion:reduce)").matches){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target)}}),{threshold:.12,rootMargin:"0px 0px -36px 0px"});revealTargets.forEach(el=>{el.dataset.reveal="";revealObserver.observe(el)})}
 /* header, menu */
 const hd=$("#hd");const sc=()=>hd.classList.toggle("s",scrollY>40);sc();addEventListener("scroll",sc,{passive:true});
